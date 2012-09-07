@@ -36,7 +36,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_PREBUILT_KERNEL := device/htc/ville/kernel
 
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
 
 # Recovery:Start
 
@@ -49,3 +49,14 @@ TARGET_RECOVERY_INITRC := device/htc/ville/recovery/init-twrp.rc
 
 # TWRP specific build flags
 DEVICE_RESOLUTION := 540x960
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
+TW_FLASH_FROM_STORAGE := true
+TW_INCLUDE_CRYPTO := true
+TW_CRYPTO_FS_TYPE := "ext4"
+TW_CRYPTO_REAL_BLKDEV := "/dev/block/mmcblk0p35"
+TW_CRYPTO_MNT_POINT := "/data"
+TW_CRYPTO_FS_OPTIONS := "noauto_da_alloc"
+TW_CRYPTO_FS_FLAGS := "0x00000006"
+TW_CRYPTO_KEY_LOC := "footer"
+TW_INCLUDE_DUMLOCK := true
+

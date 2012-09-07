@@ -23,5 +23,7 @@ PRODUCT_COPY_FILES += \
     device/htc/ville/recovery/sbin/offmode_charging:recovery/root/sbin/offmode_charging \
     device/htc/ville/recovery/sbin/power_test:recovery/root/sbin/power_test
 
-$(call inherit-product, build/target/product/full.mk)
+#$(call inherit-product, build/target/product/full.mk)
 
+PRODUCT_NAME := htc_ville
+PRODUCT_BRAND := HTC
